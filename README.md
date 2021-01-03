@@ -1,6 +1,7 @@
 CreateNewDirec
 ------
-**Description**
+**Description:**
+
 Will create a new directory. If the directory already exists it will delete the files within it.
 
 **Inputs:**
@@ -12,7 +13,8 @@ Will create a new directory. If the directory already exists it will delete the 
 
 UpdateProgress
 ------
-**Description**
+**Description:**
+
 Will print a status bar with the progress of the current progress.
 
 **Inputs:**
@@ -24,7 +26,8 @@ Will print a status bar with the progress of the current progress.
 
 WriteDictToCSV
 ------
-**Description**
+**Description:**
+
 Will write a dict or a list of dicts to a csv.
 
 **Inputs:**
@@ -37,7 +40,8 @@ Will write a dict or a list of dicts to a csv.
 
 CheckIfFileExists
 ------
-**Description**
+**Description:**
+
 Checks if a file currently exists.
 
 **Inputs:**
@@ -48,8 +52,9 @@ Checks if a file currently exists.
 
 ConvertDictToList
 ------
-**Description**
-Will convert a dictionary to a list without it's respective keys.
+**Description:**
+
+Will convert a dictionary to a list without its respective keys.
 
 **Inputs:**
 - details: dict that the information will be converted to list format
@@ -59,7 +64,8 @@ Will convert a dictionary to a list without it's respective keys.
 
 WriteOrAppendCSV
 ------
-**Description**
+**Description:**
+
 Will create or append a csv with a row of information for a specified csv and dictionary.
 
 **Inputs:**
@@ -72,6 +78,7 @@ Will create or append a csv with a row of information for a specified csv and di
 RoundValueDown
 ------
 **Description:**
+
 Will round down a float to the specified amount of decimal places.
 
 **Inputs:**
