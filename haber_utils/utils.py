@@ -4,9 +4,9 @@
 
 import os, sys
 import json, csv
-import pandas as pd 
+import math
 
-def CreateNewDirec(base_direc, name):
+def CreateNewDirec(base_direc: str, name: str):
     if(base_direc[-1] == '/' or base_direc[-1] == '\\'):
         base_direc = base_direc[:-1] # will remove the final slash
     new_direc = os.path.join(base_direc, name)
@@ -18,7 +18,7 @@ def CreateNewDirec(base_direc, name):
         os.mkdir(new_direc)
     return new_direc # without the final slash
 
-def UpdateProgress(progress, symbol):
+def UpdateProgress(progress: float, symbol):
     '''If no symbol is present then it can be set to null'''
     bar_length = 25
     status = ""
@@ -29,11 +29,11 @@ def UpdateProgress(progress, symbol):
         progress = 1
         status = "Done...\r\n"
     block = int(round(bar_length*progress))
-    text = "\rPercent Complete: [{0}] {1}% {2}".format( "#"*block + "-"*(bar_length-block), progress*100, symbol, " ",status)
+    text = "\rPercent Complete: [{0}] {1}% {2}".format( "#"*block + "-"*(bar_length-block), progress*100, str(symbol), " ",status)
     sys.stdout.write(text)
     sys.stdout.flush()
 
-def WriteDictToCSV(base_direc, details, csv_name):
+def WriteDictToCSV(base_direc: str, details, csv_name: str):
     if(base_direc[-1] == '/' or base_direc[-1] == '\\'):
         base_direc = base_direc[:-1] # will remove the final slash
     csv_name = csv_name + '.csv'
@@ -50,17 +50,17 @@ def WriteDictToCSV(base_direc, details, csv_name):
         writer.writerows(data)
     return new_csv
 
-def CheckIfFileExists(filename):
+def CheckIfFileExists(filename: str):
     return os.path.isfile(filename)
 
-def ConvertDictToList(details):
+def ConvertDictToList(details: dict):
     mid_list = list(details.items())
     output_list = []
     for item in mid_list:
         output_list(item[1]) # This gets the value not the keys
     return output_list
 
-def WriteOrAppendCSV(csv_file, details):
+def WriteOrAppendCSV(csv_file: str, details: dict):
     '''If appending then details must be of dict type'''
     if(type(details) != dict):
         raise TypeError("Details must be of dict type")
@@ -78,3 +78,9 @@ def WriteOrAppendCSV(csv_file, details):
             writer.writerow(details)
     return csv_file
 
+def RoundValueDown(number: float, decimals: int):
+    if(decimals == 0):
+        return math.floor(number)
+    factor = 10 ** decimals
+    new_val = math.floor(number * factor)/factor
+    return new_val
