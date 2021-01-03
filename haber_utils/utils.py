@@ -97,7 +97,7 @@ def ConvertDictToList(details: dict):
     mid_list = list(details.items())
     output_list = []
     for item in mid_list:
-        output_list(item[1]) # This gets the value not the keys
+        output_list.append(item[1]) # This gets the value not the keys
     return output_list
 
 def WriteOrAppendCSV(csv_file: str, details: dict):

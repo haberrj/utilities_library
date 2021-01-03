@@ -4,8 +4,10 @@
 
 from haber_utils import utils
 
-def test_CheckIfFileExists():
-    assert utils.CheckIfFileExists('__init__.py') == True
+def test_CheckIfFileExists_True():
+    assert utils.CheckIfFileExists('README.md') == True
+
+def test_CheckIfFileExists_False():
     assert utils.CheckIfFileExists('blank.txt') == False
 
 def test_ConvertDictToList():
