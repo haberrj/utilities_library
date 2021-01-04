@@ -6,7 +6,7 @@ from setuptools import find_packages, setup
 setup(
     name='haber_utils',
     packages=find_packages(include=['haber_utils']),
-    version='0.1.0',
+    version='0.3.0',
     description='General utility functions that keep being rewritten',
     author='Ron Haber',
     license='N/A',

@@ -71,7 +71,7 @@ def WriteDictToCSV(base_direc: str, details, csv_name: str):
     try:
         keys = data[0].keys()
     except IndexError:
-        print("TypeError: the data passed is not of dictionary type.")
+        raise TypeError("The data passed is not a dictionary, a list of dictionaries or is empty.")
         return
     with open(new_csv, 'w') as new_file:
         writer = csv.DictWriter(new_file, keys)

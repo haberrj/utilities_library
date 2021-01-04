@@ -64,10 +64,13 @@ def WriteDictToCSV(base_direc: str, details, csv_name: str):
         base_direc = base_direc[:-1] # will remove the final slash
     csv_name = csv_name + '.csv'
     new_csv = os.path.join(base_direc, csv_name)
-    data = list(details)
+    if(type(details) == dict):
+        data = [details]
+    else:
+        data = list(details)
     try:
         keys = data[0].keys()
-    except TypeError:
+    except IndexError:
         print("TypeError: the data passed is not of dictionary type.")
         return
     with open(new_csv, 'w') as new_file:
