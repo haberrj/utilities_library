@@ -12,7 +12,7 @@ setup(
     version='0.4.0',
     description='General utility functions that keep being rewritten',
     author='Ron Haber',
-    author_email='ron.haber@hotmail.com'
+    author_email='ron.haber@hotmail.com',
     license='MIT',
     install_requires=['pandas'],
     setup_requires=['pytest-runner'],
